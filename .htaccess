@@ -4,3 +4,35 @@ RewriteCond %{SERVER_PORT} !^443$
 RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
 # Конец редиректа
 
+# ===== ОПТИМИЗАЦИЯ ЗАГРУЗКИ (добавьте это) =====
+
+# Включить сжатие (gzip)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+    AddOutputFilterByType DEFLATE image/jpeg image/png image/gif image/svg+xml
+</IfModule>
+
+# Кэширование браузером (чтобы не загружать повторно)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Изображения кэшировать на 1 год
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    
+    # CSS и JS кэшировать на 1 месяц
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    
+    # HTML кэшировать на 1 неделю
+    ExpiresByType text/html "access plus 1 week"
+</IfModule>
+
+# Отключить кэширование для динамических файлов
+<FilesMatch "\.(php|json)$">
+    ExpiresActive Off
+</FilesMatch>
