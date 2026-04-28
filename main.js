@@ -739,9 +739,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+//Страница о компании выставки
+document.addEventListener('DOMContentLoaded', function () {
 
-document.addEventListener('DOMContentLoaded', function() {
-    const galleryItems = document.querySelectorAll('.gallery-item img');
+    /* ===== POPUP ===== */
     const popup = document.querySelector('.popup');
     const popupImg = document.querySelector('.popup-img');
     const popupImgContainer = document.querySelector('.popup-img-container');
@@ -749,170 +750,202 @@ document.addEventListener('DOMContentLoaded', function() {
     const zoomBtn = document.querySelector('.zoom-btn');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    
+
     let currentIndex = 0;
     let images = [];
     let isZoomed = false;
     let touchStartX = 0;
     let touchEndX = 0;
-    
-    // Собираем все изображения из галереи
-    galleryItems.forEach((item, index) => {
-        images.push({
-            src: item.getAttribute('src'),
-            alt: item.getAttribute('alt')
+
+    function initGallery() {
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+
+        images = [];
+
+        galleryItems.forEach((item, index) => {
+            images.push({
+                src: item.getAttribute('src'),
+                alt: item.getAttribute('alt')
+            });
+
+            item.onclick = () => {
+                currentIndex = index;
+                openPopup(currentIndex);
+            };
         });
-        
-        item.setAttribute('data-index', index);
-        
-        item.addEventListener('click', function() {
-            currentIndex = parseInt(this.getAttribute('data-index'));
-            openPopup(currentIndex);
-        });
-    });
-    
-    // Открытие попапа
+    }
+
     function openPopup(index) {
-        popupImg.setAttribute('src', images[index].src);
-        popupImg.setAttribute('alt', images[index].alt);
+        if (images.length === 0) return;
+        popupImg.src = images[index].src;
+        popupImg.alt = images[index].alt;
         popup.classList.add('active');
         document.body.style.overflow = 'hidden';
-        resetZoomState();
+        resetZoom();
     }
-    
-    // Закрытие попапа
+
     function closePopup() {
         popup.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
-    
-    // Сброс состояния зума
-    function resetZoomState() {
+
+    function resetZoom() {
         isZoomed = false;
         popupImg.style.transform = 'scale(1)';
-        popupImg.style.cursor = 'zoom-in';
-        popupImgContainer.scrollTo(0, 0);
     }
-    
-    // Переключение зума
+
     function toggleZoom() {
-        if (isZoomed) {
-            // Возвращаем исходный размер
-            popupImg.style.transform = 'scale(1)';
-            popupImg.style.cursor = 'zoom-in';
-            popupImgContainer.scrollTo(0, 0);
-        } else {
-            // Увеличиваем изображение
-            popupImg.style.transform = 'scale(1.5)';
-            popupImg.style.cursor = 'zoom-out';
-        }
         isZoomed = !isZoomed;
+        popupImg.style.transform = isZoomed ? 'scale(1.5)' : 'scale(1)';
     }
-    
-    // Переключение изображений
+
     function showNext() {
+        if (images.length === 0) return;
         currentIndex = (currentIndex + 1) % images.length;
         updateImage();
     }
-    
+
     function showPrev() {
+        if (images.length === 0) return;
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         updateImage();
     }
-    
+
     function updateImage() {
         popupImg.style.opacity = '0';
-        
         setTimeout(() => {
-            popupImg.setAttribute('src', images[currentIndex].src);
-            popupImg.setAttribute('alt', images[currentIndex].alt);
+            popupImg.src = images[currentIndex].src;
             popupImg.style.opacity = '1';
-            resetZoomState();
+            resetZoom();
         }, 200);
     }
-    
-    // Обработчики событий
+
     closeBtn.addEventListener('click', closePopup);
     zoomBtn.addEventListener('click', toggleZoom);
     nextBtn.addEventListener('click', showNext);
     prevBtn.addEventListener('click', showPrev);
-    
-    // Изменение курсора при наведении
-    popupImg.addEventListener('mouseenter', function() {
-        if (!isZoomed) {
-            popupImg.style.cursor = 'zoom-in';
-        } else {
-            popupImg.style.cursor = 'zoom-out';
-        }
+
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) closePopup();
     });
-    
-    // Зум по клику на изображение
-    popupImg.addEventListener('click', function(e) {
-        if (e.target === popupImg) {
-            toggleZoom();
-        }
-    });
-    
-    // Закрытие по клику вне изображения
-    popup.addEventListener('click', function(e) {
-        if (e.target === popup) {
-            closePopup();
-        }
-    });
-    
-    // Предотвращаем закрытие при клике на элементы управления
-    document.querySelector('.popup-content').addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-    
-    // Управление с клавиатуры
-    document.addEventListener('keydown', function(e) {
+
+    document.addEventListener('keydown', (e) => {
         if (!popup.classList.contains('active')) return;
-        
-        switch(e.key) {
-            case 'Escape':
-                closePopup();
-                break;
-            case 'ArrowRight':
-                showNext();
-                break;
-            case 'ArrowLeft':
-                showPrev();
-                break;
-            case ' ':
-                toggleZoom();
-                e.preventDefault();
-                break;
-        }
+        if (e.key === 'Escape') closePopup();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
     });
-    
-    // Свайп на мобильных устройствах
-    popupImgContainer.addEventListener('touchstart', function(e) {
+
+    popupImgContainer.addEventListener('touchstart', e => {
         touchStartX = e.changedTouches[0].screenX;
-    }, {passive: true});
-    
-    popupImgContainer.addEventListener('touchend', function(e) {
+    });
+
+    popupImgContainer.addEventListener('touchend', e => {
         touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, {passive: true});
-    
-    function handleSwipe() {
         if (isZoomed) return;
-        
-        const threshold = 50;
-        if (touchStartX - touchEndX > threshold) {
-            showNext();
-        } else if (touchEndX - touchStartX > threshold) {
-            showPrev();
+
+        if (touchStartX - touchEndX > 50) showNext();
+        if (touchEndX - touchStartX > 50) showPrev();
+    });
+
+    /* ===== ТАБЫ ===== */
+    const tabs = document.querySelectorAll('.company-tab');
+
+    // Десктопные баннеры
+    const banner2026 = document.querySelector('.event2026');
+    const banner2025 = document.querySelector('.event2025');
+
+    // Мобильные баннеры
+    const bannerMob2026 = document.querySelector('.event-banner-mob-company.event2026');
+    const bannerMob2025 = document.querySelector('.event-banner-mob-company.event2025');
+
+    // Секция с галереей
+    const gallerySection = document.querySelector('.gallery-event');
+    const gallery = document.querySelector('.gallery');
+
+    const content = {
+        2026: {
+            images: [
+                "./images/event2026-photo1.jpg",
+                "./images/event2026-photo2.jpg",
+                "./images/event2026-photo3.jpg",
+                "./images/event2026-photo4.jpg",
+                "./images/event2026-photo5.jpg",
+                "./images/event2026-photo6.jpg",
+                "./images/event2026-photo7.jpg",
+                "./images/event2026-photo8.jpg",
+                "./images/event2026-photo9.jpg",
+                "./images/event2026-photo10.jpg",
+                "./images/event2026-photo11.jpg",
+                "./images/event2026-photo12.jpg",
+            ]
+        },
+
+        2025: {
+            images: [
+                "./images/event-photo.png",
+                "./images/event-photo2.jpg",
+                "./images/event-photo3.jpg",
+                "./images/event-photo4.jpg",
+                "./images/event-photo5.jpg",
+                "./images/event-photo6.jpg",
+                "./images/event-photo7.jpg",
+                "./images/event-photo8.jpg",
+                "./images/event-photo9.jpg",
+                "./images/event-photo10.jpg",
+                "./images/event-photo11.jpg",
+                "./images/event-photo12.jpg"
+            ]
         }
+    };
+
+    function changeYear(year) {
+        const data = content[year];
+
+        // Показываем/скрываем десктопные баннеры
+        if (year === '2026') {
+            banner2026.style.display = 'block';
+            banner2025.style.display = 'none';
+        } else {
+            banner2026.style.display = 'none';
+            banner2025.style.display = 'block';
+        }
+
+        // Показываем/скрываем мобильные баннеры
+        if (bannerMob2026 && bannerMob2025) {
+            if (year === '2026') {
+                bannerMob2026.style.display = 'block';
+                bannerMob2025.style.display = 'none';
+            } else {
+                bannerMob2026.style.display = 'none';
+                bannerMob2025.style.display = 'block';
+            }
+        }
+
+        // Обновляем галерею
+        gallery.innerHTML = '';
+
+        data.images.forEach((img) => {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
+            div.innerHTML = `<img src="${img}" loading="lazy">`;
+            gallery.appendChild(div);
+        });
+
+        // Переинициализация галереи
+        initGallery();
     }
-    
-    // Предотвращаем скролл страницы при зуме
-    popupImgContainer.addEventListener('wheel', function(e) {
-        if (isZoomed) {
-            e.preventDefault();
-        }
-    }, {passive: false});
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            changeYear(tab.dataset.year);
+        });
+    });
+
+    /* старт — показываем 2026, скрываем 2025 */
+    changeYear('2026');
 });
 
 //Slider для новостей на мобилке 

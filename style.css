@@ -977,15 +977,18 @@ justify-content: center;
   flex-direction: column;
   justify-content: space-between;
   padding: 70px 60px;
-  background-image: url(./images/event-banner.png);
+  background-image: url(./images/banner2026.png);
   margin-bottom: 50px;
   height: 386px;
   background-repeat: no-repeat;
   width: 100%;
   background-size: 100% 100%;
 }
+.event-banner-img.company-page.event-2026{
+  background-image: url(./images/event-banner-2026.png);
+}
 .event-banner-img.company-page{
-  margin-top: 100px;
+  margin-top: 0;
   height: 493px;
   margin-bottom: 0;
   padding:0 ;
@@ -1010,7 +1013,6 @@ font-size: 18px;
 line-height: 20px;
 letter-spacing: 4%;
 margin-left: 58px;
-margin-bottom: 64px;
 }
 .event-banner__gratitude{
   background: linear-gradient(90deg, rgba(225, 228, 255, 0.14) 0%, rgba(135, 137, 153, 0.07) 71.16%, rgba(29, 45, 69, 0.14) 96.64%);
@@ -1045,12 +1047,56 @@ white-space: pre-line;
   font-size: 20px;
   border-radius: 12px;
 }
+.company-tabs {
+  display: flex;
+  margin: 20px 0;
+}
+.company-tabs-wrap{
+  display: flex;
+  width: 100%;
+}
+.company-tab{
+  width: 100%;
+  height: 54px;
+  max-width: 237px;
+  flex: 1;
+  padding: 15px;
+  background: #113059;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  font-size: 19.1px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  border-radius: 0;
+
+}
+
+.company-tab:first-child {
+  border-top-left-radius: 10px;
+}
+
+.company-tab:last-child {
+  border-top-right-radius: 10px;
+}
+
+.company-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  width: 100%;
+  height: 3px;
+  background: #00FFFF;
+}
 .company-unity-block{
     background-image: url(./images/test-background1.png);
   background-size: contain;
   background-repeat: no-repeat;
   margin-top: -100px;
-  padding-top: 50px;
+  padding-top: 100px;
   width: 100%;
   background-size: contain;
 }
@@ -2890,9 +2936,25 @@ width: 100%;
   .event-banner{
     display: none;
   }
+  .event-banner-img.company-page.event-2026{
+    display: none;
+  }
+  .event-banner-img.company-page{
+    display: none;
+  }
+  .company-tabs{
+    margin-top: 140px;
+  }
+  .company-tab{
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+  }
   .event-banner-mob{
   display: flex;
-  background-image: url(./images/event-banner-tablet.png);
+  background-image: url(./images/event-banner-tablet2026.png);
   width: 100%;
   height: 260px;
   background-repeat: no-repeat;
@@ -2925,6 +2987,9 @@ color: #FFF;
   color: #243755;
   font-family: 'WixMadeforText-Medium';
 }
+.event-banner-img-mob-company-page.eventmob2026{
+  background-image: url(./images/event-page-banner2026-tablet.png);
+}
 .event-banner-img-mob-company-page{
   display: flex;
   background-image: url(./images/event-page-banner-tablet.png);
@@ -2935,7 +3000,6 @@ color: #FFF;
   margin-bottom: 16px;
   flex-direction: column;
   justify-content:space-between;
-  margin-top: 100px;
   padding: 39px 0 22px 0;
   white-space: pre-line;
   border-radius: 10px;
@@ -3739,9 +3803,6 @@ font-size: 11.3px;
     position: relative;
     transition: transform 0.4s ease-in-out;
   }
-  .event-banner-img-mob-company-page{
-    margin-top: 200px;
-  }
   .news-page{
     padding: 100px 0 50px 0;
   }
@@ -3798,13 +3859,14 @@ font-size: 11.3px;
 } */
 .event-banner-mob{
   display: flex;
-  background-image: url(./images/Artboard2.svg);
+  background-image: url(./images/event-banner-mob2026.svg);
   width: 100%;
   height: 400px;
   background-repeat: no-repeat;
   background-size: 100%;
   margin-bottom: 25px;
   padding:25px;
+  padding-bottom: 50px;
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 10px;
@@ -3814,6 +3876,9 @@ font-size: 22px;
 }
 .event-banner__text-subtitle-mob{
   font-size: 13px; 
+}
+.event-banner-img-mob-company-page.eventmob2026{
+background-image: url(./images/event-banner-2026-mob.png);
 }
 .event-banner-img-mob-company-page{
     display: flex;
@@ -3825,7 +3890,6 @@ font-size: 22px;
     margin-bottom: 16px;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 170px;
     padding: 20px 0;
     white-space: pre-line;
     border-radius: 10px;
