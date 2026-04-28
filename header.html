@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эквант</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.min.js"></script>
+</head>
+<body>
+<div class="header-container">
+    <div class="header-pc">
+        <a href="./">
+            <img src="./images/ekvant-logo.png" id="logo" alt="" class="header-logo" data-lang="ru">
+        </a>
+            <div class="navigation">
+                <a href="./company.html" data-i18n="about_company"></a>
+                <a href="./manufacturers.html" data-i18n="manufacturers"></a>
+                <a href="./tries.html" data-i18n="tests_ecb"></a>
+                <a href="./products.html" data-i18n="products_header"></a>
+                <a href="./contacts.html" data-i18n="contacts"></a>
+            </div>
+    
+            <div class="header-contacts">
+                <a href="mailto:equant@equant.su">
+                    <div class="contact">
+                        <img src="./images/mail-icon.png" alt="">
+                        <p>equant@equant.su</p>
+                    </div>
+                </a>
+    
+                <a href="tel:+74951502949">
+                    <div class="contact">
+                        <img src="./images/phone-icon.png" alt="">
+                        <p>8 (495) 150-29-49</p>
+                    </div>
+                </a>
+            </div>   
+    
+    </div>
+<div class="header-mob">
+    <div class="burger-icon" id="burgerIcon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <a href="./">
+        <img src="./images/ekvant-logo.png" id="logo" alt="" class="header-mobile-logo" data-lang="ru">
+    </a>
+    <a href="tel:+74951502949" style="display: flex;
+    align-items: center;">
+            <img src="./images/phone-icon.png" alt="" style="opacity: 0.5; width: 28px;">
+    </a>
+
+    <div class="burger-menu" id="burgerMenu">
+                      <a href="./company.html" data-i18n="about_company"></a>
+              <a href="./manufacturers.html" data-i18n="manufacturers"></a>
+               <a href="./tries.html" data-i18n="tests_ecb"></a>
+               <a href="./products.html" data-i18n="products_header"></a>
+              <a href="./contacts.html" data-i18n="contacts"></a>
+              <div class="burger-menu-contacts">
+                <!--<p class="burger-menu-contacts-title" data-i18n="contacts_info"></p>-->
+                <a href="tel:+74951502949">
+                    <img src="./images/phone-blue-icon.png" alt="">
+                    <p style="font-family: WixMadeforText-Medium;">8 (495) 150-29-49</p>
+          </a>
+          <a href="https://yandex.ru/maps/-/CHVEqT33">
+            <img src="./images/location-blue-icon.png" alt="">
+            <p data-i18n="address_footer" style="font-size: 15px; font-family: WixMadeforText-Medium;font-weight:500;max-width:230px;"></p>
+          </a>
+                <a href="mailto:equant@equant.su">
+                    <img src="./images/mail-blue-icon.png" alt="">
+                    <p style="font-family: WixMadeforText-Medium;font-weight:500">equant@equant.su</p>
+                </a> 
+              </div>
+    </div>  
+</div>
+<div class="lang-btn">
+    <select id="language-select">
+        <option value="ru">RU</option>
+        <option value="en">ENG</option>
+    </select>
+</div>
+</div>
+
+<script src="./main.js" defer></script>
+</body>
+</html>

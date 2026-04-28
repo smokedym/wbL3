@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эквант</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.min.js"></script>
+</head>
+<body>
+    <header id="header" class="header-diff-page">
+    </header>
+      <section class="contract contact-page">
+        <div class="container">
+        <p class="title-shared contacts-title" data-i18n="contacts"></p>
+          <div class="contacts-info">
+            <div class="contact-info">
+              <div class="contact-one">
+                <a href="mailto:equant@equant.su">
+                  <img src="./images/mail-blue-icon.png" alt="">
+                    <p>equant@equant.su</p>
+                </a>
+              </div>
+              <div class="contact-one">
+                <a href="tel:+74951502949">
+                  <img src="./images/phone-blue-icon.png" alt="">
+                  <p>8 (495) 150-29-49</p>
+                </a>
+              </div>
+            </div>
+            <div class="contact-info">
+              <div class="contact-one">
+                <img src="./images/location-blue-icon.png" alt="">
+              <p data-i18n="address_info">
+              </p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-us">
+            <div style="position:relative;overflow:hidden; width: 100%; max-width: 541px;">
+              <a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a>
+              <a href="https://yandex.ru/maps/213/moscow/house/novodmitrovskaya_ulitsa_5as1/Z04Ycw9oS0cDQFtvfXRxd3lmYQ==/?ll=37.588224%2C55.806555&utm_medium=mapframe&utm_source=maps&z=17.13" style="color:#eee;font-size:12px;position:absolute;top:14px;">Новодмитровская улица, 5Ас1 — Яндекс Карты</a>
+              <iframe src="https://yandex.ru/map-widget/v1/?ll=37.588224%2C55.806555&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1Njc1ODIxMxJN0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINCd0L7QstC-0LTQvNC40YLRgNC-0LLRgdC60LDRjyDRg9C70LjRhtCwLCA10JDRgTEiCg1WWhZCFeo5X0I%2C&z=17.13" width="100%" height="100%" frameborder="1" allowfullscreen="true" style="position:relative; max-width: 544px; border: 3px solid white;" class="iframe-map" >
+              </iframe>
+            </div>
+            <div class="form-block" id="fromBlock">
+              <p class="form-title" data-i18n="contact_us_title"></p>
+              <form action="./send-mail.php" method="POST" enctype="multipart/form-data" id="FormMail">
+              <div>
+              <label for="fio" data-i18n="fio_label"></label>
+              <input type="text" id="fio" name="fio" required>
+              </div>
+             
+              <div>
+              <label for="organization" data-i18n="organization_label"></label>
+              <input type="text" id="organization" name="organization" required>
+              </div>
+             
+              <div>
+              <label for="email" data-i18n="email_label"></label>
+              <input type="email" id="email" name="email" placeholder="mail@gmail.com" required>
+              </div>
+             
+              <div>
+              <label for="phone" data-i18n="phone_label"></label>
+              <input type="tel" id="phone" name="phone" placeholder="+7 999 999 99 99" required>
+              </div>
+             
+              <div>
+              <label for="message" data-i18n="message_label"></label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+              </div>
+             
+              <div>
+              <label for="documents" data-i18n="documents_label"></label>
+              <input type="file" multiple id="documents" name="documents" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+              </div>
+             
+              <div class="form__button-block">
+              <button type="submit" data-i18n="submit_button"></button>
+                <a href="./politics.html">
+                <p class="form__button-text" data-i18n="privacy_policy_text"></p>
+                </a>
+              </div>
+              </form>
+             </div>
+          </div>
+          <div class="enterprise-card">
+            <p class="title-shared" data-i18n="enterprise_card_title">
+             
+             </p>
+             <div class="enterprise-card-desc">
+              <div class="enterprise-card-desc-content">
+              <div class="enterprise-card-one" data-i18n="full_name_label">
+              
+              </div>
+              <div class="enterprise-card-one" data-i18n="company_name">
+              </div>
+              </div>
+              <div class="enterprise-card-desc">
+              <div class="enterprise-card-desc-content">
+              <div class="enterprise-card-one white" data-i18n="short_name_label">
+              </div>
+              <div class="enterprise-card-one white" data-i18n="short_company_name">
+              </div>
+              </div>
+              <div class="enterprise-card-desc">
+              <div class="enterprise-card-desc-content">
+              <div class="enterprise-card-one" data-i18n="legal_address_label">
+              </div>
+              <div class="enterprise-card-one" data-i18n="address">
+              </div>
+              </div>
+              <div class="enterprise-card-desc">
+              <div class="enterprise-card-desc-content">
+              <div class="enterprise-card-one white" data-i18n="postal_address_label">
+              </div>
+              <div class="enterprise-card-one white" data-i18n="address">
+              </div>
+              </div>
+                    <div class="enterprise-card-desc">
+                      <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one">
+                          ИНН
+                        </div>
+                        <div class="enterprise-card-one">
+                          9715335890
+                        </div>
+                      </div>
+                      <div class="enterprise-card-desc">
+                        <div class="enterprise-card-desc-content">
+                          <div class="enterprise-card-one white">
+                            КПП
+                          </div>
+                          <div class="enterprise-card-one white">
+                            771501001
+                          </div>
+                        </div>
+                        <div class="enterprise-card-desc">
+                          <div class="enterprise-card-desc-content">
+                            <div class="enterprise-card-one">
+                              ОГРН
+                            </div>
+                            <div class="enterprise-card-one">
+                              1197746035893
+                            </div>
+                          </div>
+                          <div class="enterprise-card-desc">
+                            <div class="enterprise-card-desc-content">
+                              <div class="enterprise-card-one white">
+                                ОКАТО
+                              </div>
+                              <div class="enterprise-card-one white">
+                                45280561000
+                              </div>
+                            </div>
+                            <div class="enterprise-card-desc">
+                              <div class="enterprise-card-desc-content">
+                                <div class="enterprise-card-one">
+                                  ОКТМО
+                                </div>
+                                <div class="enterprise-card-one">
+                                  45353000
+                                </div>
+                              </div>
+                              <div class="enterprise-card-desc">
+                                <div class="enterprise-card-desc-content">
+                                  <div class="enterprise-card-one white">
+                                    ОКПОФ
+                                  </div>
+                                  <div class="enterprise-card-one white">
+                                    12300
+                                  </div>
+                                </div>
+            </div>
+            <div class="enterprise-card-desc">
+              <div class="enterprise-card-desc-content">
+                <div class="enterprise-card-one">
+                  ОКПО
+                </div>
+                <div class="enterprise-card-one">
+                  35760061
+                </div>
+              </div>
+</div>
+          </div>
+        </div>
+        </div>
+      </section>
+      <footer id="footer">
+      </footer>
+      <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="modal-message"></p>
+    </div>
+</div>
+<script src="./main.js" defer></script>
+</body>
+</html>
