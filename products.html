@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Эквант</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.min.js"></script>
+</head>
+<body>
+    <header id="header" class="header-diff-page">
+    </header>
+    <div class="container">
+        <div class="product-page__banner">
+            <h1 class="product-page__banner-title">SM PIE</h1>
+            <p class="product-page__banner-subtitle" data-i18n="product_page_subtitle"></p>
+            <div class="product-page__banner-base" data-i18n="product_page_base"></div>
+            <div class="product-page__banner-desc">
+                <p data-i18n="product_page_desc_1"></p>
+                <p data-i18n="product_page_desc_2"></p>
+                <p data-i18n="product_page_desc_3"></p>
+            </div>
+            <img src="./images/product-age-banner-pattern-mob.png" alt="" class="product-page__banner-pattern-mob" loading="lazy">
+        </div>
+        <div class="products-page__tasks">
+                <video controls autoplay muted loop playsinline class="products-page__tasks-video">
+                    <source src="./images/Vertical_V2.mp4" type="video/mp4">
+                </video>           
+                <div class="products-page__tasks-desc">
+                    <p class="products-page__tasks-desc-title" data-i18n="tasks_title"></p>
+                    <div class="products-page__tasks-desc-list">
+                        <div class="products-page__tasks-desc-point">
+                            <div class="products-page__tasks-desc-dot"></div>
+                            <p data-i18n="task_1"></p>
+                        </div>
+                        <div class="products-page__tasks-desc-point">
+                            <div class="products-page__tasks-desc-dot"></div>
+                            <p data-i18n="task_2"></p>
+                        </div>
+                        <div class="products-page__tasks-desc-point">
+                            <div class="products-page__tasks-desc-dot"></div>
+                            <p data-i18n="task_3"></p>
+                        </div>
+                        <div class="products-page__tasks-desc-point">
+                            <div class="products-page__tasks-desc-dot"></div>
+                            <p data-i18n="task_4"></p>
+                        </div>
+                        <div class="products-page__tasks-desc-point">
+                            <div class="products-page__tasks-desc-dot"></div>
+                            <p data-i18n="task_5"></p>
+                        </div>
+                        <div class="products-page__tasks-desc-point">
+                            <div class="products-page__tasks-desc-dot"></div>
+                            <p data-i18n="task_6"></p>
+                        </div>
+                        <div class="products-page__tasks-desc-point">
+                            <div class="products-page__tasks-desc-dot"></div>
+                            <p data-i18n="task_7"></p>
+                        </div>
+                        <div class="products-page__tasks-desc-point">
+                            <div class="products-page__tasks-desc-dot"></div>
+                            <p data-i18n="task_8"></p>
+                        </div>
+                    </div>
+                    <a href="#formProductBlock" class="link-to-request-form" style="text-decoration: none;">
+                        <button class="btn-request__product-age" data-i18n="leave_request"></button>
+                    </a>
+                </div>
+        </div>
+        <div class="products-page__applications">
+            <p class="title-shared" data-i18n="applications_title"></p>
+            <div class="products-page__applications-list">
+                <div class="products-page__applications-one">
+                    <img src="./images/application-first.svg" alt="" loading="lazy">
+                    <p data-i18n="application_1"></p>
+                </div>
+                <div class="products-page__applications-one">
+                    <img src="./images/application-second.svg" alt="" loading="lazy">
+                    <p data-i18n="application_2"></p>
+                </div>
+                <div class="products-page__applications-one">
+                    <img src="./images/application-third.svg" alt="" loading="lazy">
+                    <p data-i18n="application_3"></p>
+                </div>
+                <div class="products-page__applications-one">
+                    <img src="./images/application-fourth.svg" alt="" loading="lazy">
+                    <p data-i18n="application_4"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-page__tech-characters">
+        <div class="container">
+            <p class="title-shared" data-i18n="specs_title"></p>
+            <div class="enterprise-card-desc">
+                <div class="enterprise-card-desc-content">
+                    <div class="enterprise-card-one product-page-settings product-page white" data-i18n="spec_cpu"></div>
+                    <div class="enterprise-card-one product-page-settings white" data-i18n="spec_cpu_value"></div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page" data-i18n="spec_memory"></div>
+                        <div class="enterprise-card-one product-page-settings" data-i18n="spec_memory_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page white" data-i18n="spec_m2"></div>
+                        <div class="enterprise-card-one product-page-settings white" data-i18n="spec_m2_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page" data-i18n="spec_ekey"></div>
+                        <div class="enterprise-card-one product-page-settings" data-i18n="spec_ekey_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page white" data-i18n="spec_gpu"></div>
+                        <div class="enterprise-card-one product-page-settings white" data-i18n="spec_gpu_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page" data-i18n="spec_npu"></div>
+                        <div class="enterprise-card-one product-page-settings" data-i18n="spec_npu_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page white" data-i18n="spec_interfaces"></div>
+                        <div class="enterprise-card-one product-page-settings white" data-i18n="spec_interfaces_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page" data-i18n="spec_expansion"></div>
+                        <div class="enterprise-card-one product-page-settings" data-i18n="spec_expansion_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page white" data-i18n="spec_industrial"></div>
+                        <div class="enterprise-card-one product-page-settings white" data-i18n="spec_industrial_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page" data-i18n="spec_os"></div>
+                        <div class="enterprise-card-one product-page-settings" data-i18n="spec_os_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page white" data-i18n="spec_software"></div>
+                        <div class="enterprise-card-one product-page-settings white" data-i18n="spec_software_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page" data-i18n="spec_dimensions"></div>
+                        <div class="enterprise-card-one product-page-settings" data-i18n="spec_dimensions_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page white" data-i18n="spec_power"></div>
+                        <div class="enterprise-card-one product-page-settings white" data-i18n="spec_power_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page" data-i18n="spec_cooling"></div>
+                        <div class="enterprise-card-one product-page-settings" data-i18n="spec_cooling_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page white" data-i18n="spec_temp_general"></div>
+                        <div class="enterprise-card-one product-page-settings white" data-i18n="spec_temp_general_value"></div>
+                    </div>
+                </div>
+                <div class="enterprise-card-desc">
+                    <div class="enterprise-card-desc-content">
+                        <div class="enterprise-card-one product-page-settings product-page" data-i18n="spec_temp_industrial"></div>
+                        <div class="enterprise-card-one product-page-settings" data-i18n="spec_temp_industrial_value"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="contact-button">
+        <div class="contact-button-item">
+            <div class="contact-button-item-block">
+                <img src="./images/phone-icon.png" alt="" class="contact-button-icons" loading="lazy">
+                <p data-i18n="to_contact"></p>
+            </div>
+            <div class="contact-info-item phone">
+                8 (495) 150-29-49
+                <img src="./images/copy-icon.png" alt="" loading="lazy">
+            </div>
+        </div>
+        <div class="contact-button-item">
+            <div class="contact-button-item-block">
+                <img src="./images/mail-icon.png" alt="" class="contact-button-icons" loading="lazy">
+                <p data-i18n="to_write"></p>
+            </div>
+            <div class="contact-info-item email">
+                equant@equant.su
+                <img src="./images/copy-icon.png" alt="" loading="lazy">
+            </div>
+        </div>
+        </button>
+    </div>
+    <div class="product-page__tech-documentations">
+        <div class="container">
+            <div class="product-page__tech-documentations-container">
+                <p class="title-shared" data-i18n="docs_title"></p>
+                <div class="product-page__tech-documentations-block">
+                    <img src="./images/pdf-icon.svg" alt="" loading="lazy">
+                    <div class="product-page__tech-documentations-block-text">
+                        <p class="product-page__tech-documentations-block-title" data-i18n="docs_module"></p>
+                        <p class="product-page__tech-documentations-block-subtitle" data-i18n="docs_description"></p>
+                    </div>
+                    <a href="./pdf/sm_pie_equant.pdf" class="product-page__tech-documentations-download" data-i18n="docs_download"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-page__sm-pie">
+        <div class="container">
+            <p class="title-shared" data-i18n="use_cases_title"></p>
+            <div class="product-page__sm-pie-list">
+                <div class="product-page__sm-pie-list-one">
+                    <div class="product-page__sm-pie-one">
+                    <div class="product-page__sm-pie-one-img">
+                        <img src="./images/sm-pie-first.svg" alt="" loading="lazy">
+                    </div>
+                    <div class="product-page__sm-pie-one-text">
+                        <p class="product-page__sm-pie-one-title" data-i18n="use_case_1"></p>
+                        <p class="product-page__sm-pie-one-subtitle" data-i18n="use_case_1_desc"></p>
+                    </div>
+                </div>
+                <div class="product-page__sm-pie-one">
+                    <div class="product-page__sm-pie-one-img">
+                        <img src="./images/sm-pie-second.svg" alt="" loading="lazy">
+                    </div>
+                    <div class="product-page__sm-pie-one-text">
+                        <p class="product-page__sm-pie-one-title" data-i18n="use_case_3"></p>
+                        <p class="product-page__sm-pie-one-subtitle" data-i18n="use_case_3_desc"></p>
+                    </div>
+                </div>
+                <div class="product-page__sm-pie-one">
+                    <div class="product-page__sm-pie-one-img">
+                        <img src="./images/sm-pie-third.svg" alt="" loading="lazy">
+                    </div>
+                    <div class="product-page__sm-pie-one-text">
+                        <p class="product-page__sm-pie-one-title" data-i18n="use_case_5"></p>
+                        <p class="product-page__sm-pie-one-subtitle" data-i18n="use_case_5_desc"></p>
+                    </div>
+                </div>
+                </div>
+                <div class="product-page__sm-pie-list-one">
+                    <div class="product-page__sm-pie-one">
+                    <div class="product-page__sm-pie-one-img">
+                        <img src="./images/sm-pie-fourth.svg" alt="" loading="lazy">
+                    </div>
+                    <div class="product-page__sm-pie-one-text">
+                        <p class="product-page__sm-pie-one-title" data-i18n="use_case_2"></p>
+                        <p class="product-page__sm-pie-one-subtitle" data-i18n="use_case_2_desc"></p>
+                    </div>
+                </div>
+                <div class="product-page__sm-pie-one">
+                    <div class="product-page__sm-pie-one-img">
+                        <img src="./images/sm-pie-sixth.svg" alt="" loading="lazy">
+                    </div>
+                    <div class="product-page__sm-pie-one-text">
+                        <p class="product-page__sm-pie-one-title" data-i18n="use_case_4"></p>
+                        <p class="product-page__sm-pie-one-subtitle" data-i18n="use_case_4_desc"></p>
+                    </div>
+                </div>
+                <div class="product-page__sm-pie-one">
+                    <div class="product-page__sm-pie-one-img">
+                        <img src="./images/sm-pie-fiveth.svg" alt="" loading="lazy">
+                    </div>
+                    <div class="product-page__sm-pie-one-text">
+                        <p class="product-page__sm-pie-one-title" data-i18n="use_case_6"></p>
+                        <p class="product-page__sm-pie-one-subtitle" data-i18n="use_case_6_desc"></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-page__advantages">
+        <img src="./images/product-advantages-pattern.png" alt="" class="product-page__advantages-pattern" loading="lazy">
+        <div class="container">
+            <p class="product-page__advantages-title" data-i18n="advantages_title"></p>
+            <div class="product-page__advantages-list">
+                <div class="product-page__advantages-card advantage-one">
+                    <p class="product-page__advantages-card-title" data-i18n="advantage_1"></p>
+                    <p class="product-page__advantages-card-subtitle" data-i18n="advantage_1_desc"></p>
+                </div>
+                <div class="product-page__advantages-card advantage-second">
+                    <p class="product-page__advantages-card-title" data-i18n="advantage_2"></p>
+                    <p class="product-page__advantages-card-subtitle" data-i18n="advantage_2_desc"></p>
+                </div>
+                <div class="product-page__advantages-card advantage-third">
+                    <p class="product-page__advantages-card-title" data-i18n="advantage_3"></p>
+                    <p class="product-page__advantages-card-subtitle" data-i18n="advantage_3_desc"></p>
+                </div>
+                <div class="product-page__advantages-card advantage-fourth">
+                    <p class="product-page__advantages-card-title" data-i18n="advantage_4"></p>
+                    <p class="product-page__advantages-card-subtitle" data-i18n="advantage_4_desc"></p>
+                </div>
+                <div class="product-page__advantages-card advantage-fiveth">
+                    <p class="product-page__advantages-card-title" data-i18n="advantage_5"></p>
+                    <p class="product-page__advantages-card-subtitle" data-i18n="advantage_5_desc"></p>
+                </div>
+                <div class="product-page__advantages-card advantage-sixth">
+                    <p class="product-page__advantages-card-title" data-i18n="advantage_6"></p>
+                    <p class="product-page__advantages-card-subtitle" data-i18n="advantage_6_desc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-page__request" id="formProductBlock">
+        <div class="container">
+            <div class="product-page__request-container">
+                <div class="product-page__request-form">
+                    <p class="product-page__request-form-title" data-i18n="request_title"></p>
+                    <p class="product-page__request-form-subtitle" data-i18n="request_subtitle"></p>
+                    <form action="./send-mail.php" method="POST" enctype="multipart/form-data" id="FormProducts">
+                        <div>
+                            <input type="text" id="fio" name="fio" required data-i18n="form_name">
+                        </div>
+                        <div>
+                            <input type="email" id="email" name="email" data-i18n="form_email" required>
+                        </div>
+                        <div>
+                            <input type="tel" id="phone" name="phone" required placeholder="+7 999 999 99 99">
+                        </div>
+                        <div>
+                            <textarea id="message" name="message" rows="4" required data-i18n="form_message"></textarea>
+                        </div>
+                        <div class="form__button-block">
+                            <button type="submit" data-i18n="submit_button"></button>
+                            <a href="./politics.html">
+                                <p class="form__products-text" data-i18n="privacy_policy"></p>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+                <img src="./images/request-products-img.jpg" alt="" style="width: 100%;" class="request-product-img" loading="lazy">
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    </footer>
+          <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="modal-message">
+        </p>
+    </div>
+</div>
+
+    <script src="./main.js" defer></script>
+</body>
+</html>
